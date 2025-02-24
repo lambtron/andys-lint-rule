@@ -1,7 +1,7 @@
 export default {
   name: "andys-lint-plugin",
   rules: {
-    "andys-lint-rule": {
+    "variables-must-be-named-andy": {
       create(context) {
         return {
           VariableDeclarator(node) {
@@ -9,6 +9,8 @@ export default {
               context.report({
                 node,
                 message: "Your variable is not named 'andy'.",
+                hint: "Use 'andy' instead.",
+                fix: (fixer) => fixer.replaceText(node, "andy")
               });
             }
           },
