@@ -1,0 +1,9 @@
+{
+  "lint": {
+    "plugins": ["./my-plugin.ts"]
+  },
+  "name": "@lambtron/andys-lint-rule",
+  "version": "0.1.0",
+  "license": "MIT",
+  "exports": "./mod.ts"
+}
