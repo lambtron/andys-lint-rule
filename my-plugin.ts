@@ -1,4 +1,4 @@
-export default {
+const plugin: Deno.lint.Plugin = {
   name: "andys-lint-plugin",
   rules: {
     "variables-must-be-named-andy": {
@@ -10,7 +10,7 @@ export default {
                 node,
                 message: "Your variable is not named 'andy'.",
                 hint: "Use 'andy' instead.",
-                fix: (fixer) => fixer.replaceText(node, "andy")
+                fix: (fixer) => fixer.replaceText(node, "andy"),
               });
             }
           },
@@ -18,4 +18,5 @@ export default {
       },
     },
   },
-} satisfies Deno.lint.Plugin;
+};
+export default plugin;
