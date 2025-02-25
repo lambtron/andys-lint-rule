@@ -13,7 +13,13 @@ functionality of `deno lint` with your own custom rules.
 
 ## Publishing to JSR
 
-1. Update your `deno.json` with `exports` pointing to `./my-plugin.ts`:
+1. Create a `mod.ts` file that exports your plugin.
+
+```
+export * from “./my-plugin.ts”;
+```
+
+2. Update your `deno.json`:
 
 ```
 {
@@ -23,11 +29,11 @@ functionality of `deno lint` with your own custom rules.
   “name”: “@lambtron/andys-lint-rule”,
   “version”: “0.1.0”,
   “license”: “MIT”,
-  “exports”: “./my-plugin.ts”
+  “exports”: “./mod.ts”
 }
 ```
 
-2. Publish to JSR
+3. Publish to JSR
 
 ```
 deno publish
