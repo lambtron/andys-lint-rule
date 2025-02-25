@@ -1,6 +1,6 @@
-# Andy's Lint Rule
+# Andy’s Lint Rule
 
-This is Andy's lint rule, and besides from being a critical lint rule that you
+This is Andy’s lint rule, and besides from being a critical lint rule that you
 must add to your `deno lint`, this serves as an example of how to create a lint
 rule plugin, test it, and publish it to JSR.
 
@@ -13,23 +13,21 @@ functionality of `deno lint` with your own custom rules.
 
 ## Publishing to JSR
 
-1. Create a file (`mod.ts`) that exports your lint plugin.
-
-2. Update your `deno.json`:
+1. Update your `deno.json` with `exports` pointing to `./my-plugin.ts`:
 
 ```
 {
-  "lint": {
-    "plugins": ["./my-plugin.ts"]
+  “lint”: {
+    “plugins”: [“./my-plugin.ts”]
   },
-  "name": "@lambtron/andys-lint-rule",
-  "version": "0.1.0",
-  "license": "MIT",
-  "exports": "./mod.ts"
+  “name”: “@lambtron/andys-lint-rule”,
+  “version”: “0.1.0”,
+  “license”: “MIT”,
+  “exports”: “./my-plugin.ts”
 }
 ```
 
-3. Publish to JSR
+2. Publish to JSR
 
 ```
 deno publish
